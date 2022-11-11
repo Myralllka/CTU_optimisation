@@ -14,13 +14,13 @@ drawfitline(A);
 
 % A=load('data/makarena1.txt')';
 A=load('data/paper1.txt')';
-% conn=load('data/connected_points.txt');
+conn=load('data/connected_points.txt');
 
-% [U, C, b0] = fitaff(A, 121);
-% subplot(222)
-% playmotion(conn,A,U*C + b0);
-% subplot(223)
-% plottraj2(C);
+[U, C, b0] = fitaff(A, 2);
+subplot(222)
+playmotion(conn,A,U*C + b0);
+subplot(223)
+plottraj2(C);
  
 subplot(224)
 d = erraff(A);
