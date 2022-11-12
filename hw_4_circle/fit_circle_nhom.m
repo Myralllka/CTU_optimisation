@@ -1,16 +1,25 @@
-function [d e f] = fit_circle_nhom(X)
-% function [d e f] = fit_circle_nhom(X)
-%
-% INPUT: 
-% X: n-by-2 vector
-%    with data
-%
-%
-% OUTPUT: 
-% quadric coordinates of the circle
+function [d, e, f] = fit_circle_nhom(X)
+    %
+    % INPUT: 
+    % X: n-by-2 vector
+    %    with data
+    %
+    %
+    % OUTPUT: 
+    % quadric coordinates of the circle
 
-d = 2;
-e = 1;
-f = 1;
+    [nrows,ncols]=size(X);
 
+    A = ones(nrows,3);
+
+    A(:, 1) = X(:,1);
+    A(:, 2) = X(:,2);
+
+    B = -(X(:,1).*X(:, 1) + X(:,2).*X(:,2));
+
+    DEF = inv(A.'*A)*A.' * B;
+
+    d = DEF(1);
+    e = DEF(2);
+    f = DEF(3);
 end

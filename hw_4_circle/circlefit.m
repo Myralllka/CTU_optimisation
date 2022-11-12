@@ -13,6 +13,11 @@ load('data.mat')
 % dnh = dist(X, x0y0r_nh(1), x0y0r_nh(2), x0y0r_nh(3))
 % etc.
 
+% X = [2, 2;
+%      2, 5;
+%      6, 5;
+%      5, 3 ];
+
 figure;
 subplot(1,2,1);
 [d e f] = fit_circle_nhom(X);
@@ -30,5 +35,4 @@ subplot(1,2,2);
 plot_circle(x0, y0, r, 'y', 'ransac')
 plot(A(:, 1), A(:, 2), '.r');
 axis equal;
-
 
