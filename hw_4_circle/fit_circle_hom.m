@@ -10,7 +10,7 @@ function [d, e, f] = fit_circle_hom(X)
     % A = [x^2+y^2 | x | y | 1]
     % ADEF = [A D E F]
 
-    [nrows,ncols]=size(X);
+    [nrows, ~] = size(X);
 
     A = ones(nrows, 4);
     A(:, 1) = X(:,1).*X(:, 1) + X(:,2).*X(:,2);

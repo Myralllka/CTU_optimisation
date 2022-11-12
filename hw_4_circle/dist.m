@@ -14,6 +14,4 @@ function d = dist(X,x0,y0,r)
     [N ~] = size(X);
     X = X - [x0, y0];
     d = (sqrt(sum(X.*X, 2)) - r).';
-    d = zeros(1,N);
-
 end
